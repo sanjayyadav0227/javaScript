@@ -135,3 +135,118 @@ undefined
 __________
 hoisting
 =============================================
+11.
+function add(a = 5, b = a * 2) {
+  return a + b;
+}
+console.log(add(3));
+console.log(add());
+-----------------------------
+9      15
+___________
+parameter
+==============================================
+12.
+function createCounter() {
+  let count = 0;
+  return function() {
+    return ++count;
+  };
+}
+const counter = createCounter();
+console.log(counter());
+console.log(counter());
+-----------------------------------
+1   2
+______
+closure
+=============================================
+13.
+function testHoist() {
+  console.log(foo);
+  var foo = 10;
+}
+testHoist();
+----------------------
+undefined
+__________
+hoisting
+============================================
+14.
+(function() {
+  var x = 5;
+})();
+console.log(x);
+---------------------
+undefined
+__________
+iife      function scope
+===========================================
+15.
+function multiplierFactory(factor) {
+  return function(num) {
+    return num * factor;
+  };
+}
+let double = multiplierFactory(2);
+console.log(double(4));
+------------------------------
+8
+__
+closure with parameter
+==========================================
+16.
+let x = 5;
+function checkScope() {
+  let x = 10;
+  console.log(x);
+}
+checkScope();
+console.log(x);
+-----------------------------
+10   5
+__________
+function scope
+==========================================
+17.
+function hoistParam(param) {
+  console.log(param);
+  var param = 20;
+}
+hoistParam(10);
+-------------------
+10
+___
+hoisting parameter
+===========================================
+18.
+let x = 1;
+function outer() {
+  let x = 2;
+  function inner() {
+    console.log(x);
+  }
+  inner();
+}
+outer();
+--------------------
+ 2
+____
+function scope
+===========================================
+19.
+function testArgs(a, b, c) {
+  console.log(arguments[0], arguments[1], arguments[2]);
+}
+testArgs(1, 2);
+----------------------
+20.
+function testArgs(a, b, c) {
+  console.log(arguments[0], arguments[1], arguments[2]);
+}
+testArgs(1, 2);
+---------------------
+1   2    undefined
+____________________
+arguments object
+============================================

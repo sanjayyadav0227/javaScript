@@ -250,3 +250,115 @@ testArgs(1, 2);
 ____________________
 arguments object
 ============================================
+21.
+function outer() {
+  let a = 1;
+  function inner() {
+    console.log(a);
+  }
+  return inner;
+}
+let result = outer();
+result();
+--------------------------
+ 1
+____
+closure and lexical
+============================================
+22.
+console.log(typeof foo);
+var foo = function() {
+  return 5;
+};
+-------------------
+undefined
+__________
+hoisting
+============================================
+23.
+function hoistFunc() {
+  console.log(foo());
+  function foo() {
+    return 10;
+  }
+}
+hoistFunc();
+------------------------
+ 10
+____
+hoisting function
+=============================================
+24.
+function createFunction() {
+  let count = 0;
+  return function() {
+    return ++count;
+  };
+}
+
+const increment = createFunction();
+console.log(increment());
+console.log(increment());
+-----------------------------------
+1  2
+_____
+closure
+===========================================
+25.
+let x = 10;
+function checkScope() {
+  let x = 20;
+  console.log(x);
+}
+checkScope();
+console.log(x);
+-------------------
+20   10 
+_________
+scope 
+=========================================
+26.
+(function() {
+  var x = 5;
+})();
+console.log(x);
+------------------
+ReferenceError 
+_______________
+iife scope
+============================================
+27.
+function outerFunction() {
+  var outerVar = "I'm outer";
+  return function innerFunction() {
+    console.log(outerVar);
+  };
+}
+outerFunction()();
+----------------------
+I'm outer
+__________
+closure
+=============================================
+28.
+console.log(typeof func);
+var func = function() {
+  return 5;
+};
+-----------------------
+undefined
+__________
+hoisting
+=============================================
+29.
+let x = 10;
+if (true) {
+  let x = 20;
+  console.log(x);
+}
+console.log(x);
+-------------------
+20   10 
+________
+block scope
+=============================================

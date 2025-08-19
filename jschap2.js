@@ -386,3 +386,127 @@ function buildCar(brand, model, year = new Date().getFullYear()) {
 console.log(buildCar("Toyota", "Camry"));
 console.log(buildCar("Honda", "Civic", 2020));
 =========================================================================
+31.
+Create a function registerUser that takes a required argument username and an unknown number of optional properties using the rest operator (e.g., email, age).
+------------------------------------------
+function registerUser(username, ...optionalProps) {
+  return {
+    user:username,
+    optionalProperties: optionalProps[0],
+    age: optionalProps[1]
+  };
+}
+
+console.log(registerUser("raman", "raman@example.com", 22));
+=========================================================================
+32.
+Write a function favoriteFood that takes one positional argument food and an unknown number of ingredients using the rest operator.
+-------------------------------------------
+function favoriteFood(food, ...ingredients) {
+  return {
+    food,
+    ingredients
+  };
+}
+
+console.log(favoriteFood("Pizza", "Cheese", "Tomato", "Olives"));
+=========================================================================
+33.
+Create a function assignTask that accepts two arguments: task and employee, with employee defaulting to "Unassigned".
+---------------------------------------
+function assignTask(task, employee = "Unassigned") {
+  return `${task} is assigned to ${employee}.`;
+}
+
+console.log(assignTask("Prepare report"));
+console.log(assignTask("Fix bug", "Raman"));
+=========================================================================
+34.
+Write a function createShoppingList that accepts an unknown number of items using the rest operator and returns the shopping list as an array.
+--------------------------------------
+function createShoppingList(...items) {
+  return items;
+}
+
+console.log(createShoppingList("Milk", "Bread", "Eggs"));
+=========================================================================
+35.
+Create an object movie with primitive properties: title, genre, and year.
+------------------------------------------------------
+const movie = {
+  title: "Inception",
+  genre: "Science Fiction",
+  year: 2010
+};
+
+console.log(movie);
+console.log(movie.title);
+console.log(movie.year);
+=========================================================================
+36.
+Create an object restaurant with non-primitive properties: name, menu (an array), and ratings (an array of rating objects).
+-----------------------------------------
+const restaurant = {
+  name: "Tasty Bites",
+  menu: ["Pasta", "Pizza", "Burger", "Salad"],
+  ratings: [
+    { user: "Raman", score: 4.5 },
+    { user: "Anjali", score: 4.0 },
+    { user: "Vikram", score: 5.0 }
+  ]
+};
+
+console.log(restaurant);
+console.log(restaurant.name);
+console.log(restaurant.ratings[0]);
+=========================================================================
+37.
+Create an object phone with primitive properties brand, model, and price, and a method getInfo that returns a string with the phone's details.
+-----------------------------------------------
+const phone = {
+    brand: "oppo",
+    model: "f21",
+    price: 21000,
+}
+
+console.log(phone.brand);
+console.log(phone["model"]);
+console.log(phone.price);
+=========================================================================
+38.
+Create an object student with both primitive (name, age) and non-primitive (subjects - an array) properties.
+----------------------------------------
+const student = {
+    name: "sanjay",
+    age: 21,
+    sub:['math','english','bio','hindi'],
+}
+
+console.log(student.name);
+console.log(student.age);
+console.log(student.sub[0]);
+=========================================================================
+39.
+Write a function greetFriends that takes one required argument greeting and an unknown number of friend names using the rest operator.
+-------------------------------------------
+function greetFriends(greeting, ...friends) {
+  return friends.map(friend => `${greeting}, ${friend}!`);
+}
+
+console.log(greetFriends("Hello", "Raman", "Anjali", "Vikram"));
+=========================================================================
+40.
+Create an object house with primitive properties address, size, and price, and a method getDetails that returns a description of the house.
+----------------------------------------------
+const house = {
+  address: "123 shyam Nagar",
+  size: "3100 sqft",
+  price: 850000,
+
+  getDetails: function() {
+    return `This house is located at ${this.address}, has a size of ${this.size}, and is priced at $${this.price}.`;
+  }
+};
+
+console.log(house.getDetails());
+=========================================================================

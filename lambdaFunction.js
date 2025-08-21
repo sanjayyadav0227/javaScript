@@ -120,3 +120,71 @@ console.log(check(-5))
 let AreaOfCircle = r => 3.14*r*r;
 console.log(AreaOfCircle(15))
 ==================================================================
+21. Multiply Two Numbers: Write a lambda function to multiply two numbers.
+------------------------------------------------------------------
+let multiply = (a,b) => a*b;
+console.log(multiply(15,5))
+==================================================================
+22. Subtract Two Numbers: Write a lambda function to subtract two numbers.
+------------------------------------------------------------------
+let Subtract= (a,b) => a-b;
+console.logSubtract(15,5))
+==================================================================
+23. Check if a Number is a Prime: Write a lambda function to check if a given number is prime.
+-----------------------------------------------------------------
+let isPrime = (num) => {
+    if(num < 2) return false;
+    for(let i=2; i*i<num;i++){
+        if(num%i === 0) return false;
+    }
+    return true;
+}
+console.log(isPrime(4))
+==================================================================
+24. Find the Cube of a Number: Write a lambda function to find the cube of a given number.
+------------------------------------------------------------------
+let isPrime = (n) => (Math.cbrt(n)).toFixed(2);
+console.log(isPrime(28));
+==================================================================
+25. Convert Celsius to Fahrenheit: Write a lambda function to convert temperature from Celsius to Fahrenheit.
+------------------------------------------------------------------
+let celsius = (c) => (9/5*c)+32;
+console.log(celsius(28));
+===================================================================
+29. Find the Greater of Three Numbers: Write a lambda function to find the greatest of three numbers.
+-------------------------------------------------------------------
+let max = (a,b,c) => a>b&&a>c?a:b>a&&b>c?b:c;
+console.log(max(521,9,71));
+===================================================================
+32. Calculate Compound Interest: Write a lambda function to calculate compound interest (P, R, T).
+-------------------------------------------------------------------
+let compundInterest = (p, r, t) => (p * (Math.pow((1 + r / 100),t)))-p;
+console.log(compundInterest(10000, 5, 2))
+===================================================================
+34. Check if a Character is a Vowel or Consonant: Write a lambda function to check if a given character is a vowel or consonant.
+-------------------------------------------------------------------
+let vowelConsonent = char => (char==="a"||char==="e"||char==="i"||char==="o"||char==="u"||char==="A"||char==="E"||char==="I"||char==="O"||char==="U") ? "Vowel" : "Consonent";
+
+console.log(vowelConsonent("5"));
+===================================================================
+
+35. Find the ASCII Value of a Character: Write a lambda function to find the ASCII value of a given character.
+-------------------------------------------------------------------
+let vowelConsonent = char => char.charCodeAt(0);
+console.log(vowelConsonent("T"));
+====================================================================
+36. Check if a Year is a Century Year: Write a lambda function to check if a year is a century year (ends with 00).
+---------------------------------------------------------------------
+let vowelConsonent = year => year % 100 === 0;
+console.log(vowelConsonent(2010));
+====================================================================
+37. Check if Two Numbers are Equal: Write a lambda function to check if two numbers are equal.
+--------------------------------------------------------------------
+let equal = (a,b) => a === b;
+console.log(equal(5, "5"));
+====================================================================
+39. Find the Next Even Number: Write a lambda function to return the next even number after a given number.
+--------------------------------------------------------------------
+let nextEven = num => (num % 2 === 0) ? num + 2 : num + 1;
+console.log(nextEven(6));
+====================================================================

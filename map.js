@@ -69,3 +69,74 @@ console.log(result);
 const price = [499, 899];
 const result = price.map((e)=> `Price : $${e}`);
 console.log(result);
+=========================================================================
+11. Append Batch Year
+ ['Amit', 'Neha'] → ['Amit - 2020', 'Neha - 2020']
+
+const name = ['Amit', 'Neha'];
+const result = name.map((e)=> `${e} - 2020`);
+console.log(result);
+=========================================================================
+12. Generate Student Emails
+ ['Raj Verma', 'Kavita Rai'] → ['raj.verma@univ.com', 'kavita.rai@univ.com']
+
+const name = ['Raj Verma', 'Kavita Rai'];
+const result = name.map((e)=> e.toLowerCase().replace(" ",".")+"@univ.com");
+console.log(result);
+=========================================================================
+13. Convert Subject Names to Uppercase
+ ['history', 'geography'] → ['HISTORY', 'GEOGRAPHY']
+
+const name = ['history', 'geography'];
+const result = name.map((e)=> e.toUpperCase())
+console.log(result);
+=========================================================================
+14. Student Roll Numbers Formatting
+ [101, 102] → ['Roll#101', 'Roll#102']
+
+const roll = [101, 102];
+const result = roll.map((e)=> `Roll#${e}`)
+console.log(result);
+=========================================================================
+15. Assign All Students to Same Section
+ ['S1', 'S2'] → [{ id: 'S1', section: 'A' }, { id: 'S2', section: 'A' }]
+
+const id = ['S1', 'S2'];
+const result = id.map((e)=> ({id: e, section: 'A'}))
+console.log(result);
+=========================================================================
+16. Add Status to Leads
+ ['Lead1', 'Lead2'] → [{ name: 'Lead1', status: 'new' }, { name: 'Lead2', status: 'new' }]
+
+const id = ['Lead1', 'Lead2'];
+const result = id.map((e)=> ({name: e, status: 'new'}))
+console.log(result);
+=========================================================================
+17. Client Name Capitalization
+ ['reliance', 'tcs'] → ['Reliance', 'Tcs']
+
+const id = ['reliance', 'tcs'];
+const result = id.map((e)=> e.charAt().toUpperCase()+e.slice(1))
+console.log(result);
+=========================================================================
+18. Format Client Codes
+ ['C01', 'C02'] → ['CLIENT-C01', 'CLIENT-C02']
+
+const id = ['C01', 'C02'];
+const result = id.map((e)=> `CLIENT-${e}`)
+console.log(result);
+=========================================================================
+19. Assign Sales Representative
+ ['Client A', 'Client B'] → [{ name: 'Client A', rep: 'Unassigned' }, { name: 'Client B', rep: 'Unassigned' }]
+
+const id = ['Client A', 'Client B'];
+const result = id.map((e)=> ({name:e, rep: "Unassigned"}))
+console.log(result);
+=========================================================================
+20. Transform Invoices to PDF links
+ [301, 302] → ['/invoices/301.pdf', '/invoices/302.pdf']
+
+const id = [301, 302];
+const result = id.map((e)=> `/invoices/${e}.pdf`)
+console.log(result);
+=========================================================================

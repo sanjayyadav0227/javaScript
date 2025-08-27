@@ -140,3 +140,144 @@ const id = [301, 302];
 const result = id.map((e)=> `/invoices/${e}.pdf`)
 console.log(result);
 =========================================================================
+21. Add Department Info
+ ['John', 'Mira'] → ['John - Sales', 'Mira - Sales']
+
+const name = ['John', 'Mira'];
+const result = name.map((e)=> `${e} - Sales`)
+console.log(result);
+=========================================================================
+22. Employee IDs to Short Format
+ ['EMP001', 'EMP002'] → ['001', '002']
+
+const id = ['EMP001', 'EMP002'];
+const result = id.map((e)=> e.slice(3))
+console.log(result);
+=========================================================================
+23. Generate Work Email IDs
+ ['Rita Kumar', 'Anil Roy'] → ['rita.kumar@company.com', 'anil.roy@company.com']
+
+const name = ['Rita Kumar', 'Anil Roy'];
+const result = name.map((e)=> e.toLowerCase().replace(" ", ".")+"@company.com")
+console.log(result);
+=========================================================================
+24. Salary Amount to Text
+ [45000, 52000] → ['₹45000', '₹52000']
+
+const num = [45000, 52000];
+const result = num.map((e)=> `$${e}`)
+console.log(result);
+=========================================================================
+25. All Employees to Active Status
+ ['Ankita', 'Suraj'] → [{ name: 'Ankita', status: 'active' }, { name: 'Suraj', status: 'active' }]
+
+const name = ['Ankita', 'Suraj'];
+const result = name.map((e)=> ({name:e, status: 'active'}))
+console.log(result);
+=========================================================================
+
+26. Add Unit Type to Property
+ ['Green Villa', 'Oak Tower'] → ['Green Villa - Apartment', 'Oak Tower - Apartment']
+
+const name = ['Green Villa', 'Oak Tower'];
+const result = name.map((e)=> `${e} - Apartment`)
+console.log(result);
+=========================================================================
+27. Convert Rent Price to Monthly Format
+ [15000, 20000] → ['₹15000/month', '₹20000/month']
+
+const num = [15000, 20000];
+const result = num.map((e)=> `$${e}/month`)
+console.log(result);
+=========================================================================
+28. Add Default Furnishing Status
+ ['Flat 1', 'Flat 2'] → [{ name: 'Flat 1', furnished: false }, { name: 'Flat 2', furnished: false }]
+
+const item = ['Flat 1', 'Flat 2'];
+const result = item.map((e)=> ({name:e, furnished: false}))
+console.log(result);
+=========================================================================
+29. Property Listing Link Creation
+ ['P001', 'P002'] → ['/properties/P001', '/properties/P002']
+
+const item = ['P001', 'P002'];
+const result = item.map((e)=> `/properties/${e}`)
+console.log(result);
+=========================================================================
+30. Attach Available From Date
+ ['Unit A', 'Unit B'] → ['Unit A - Available from 1st May', 'Unit B - Available from 1st May']
+
+const item = ['Unit A', 'Unit B'];
+const result = item.map((e)=> `${e} - Available from 1st May`)
+console.log(result);
+=========================================================================
+31. Tracking Code Formatting
+ ['TR123', 'TR456'] → ['Tracking: TR123', 'Tracking: TR456']
+
+const item = ['TR123', 'TR456'];
+const result = item.map((e)=> `Tracking: ${e}`)
+console.log(result);
+=========================================================================
+32. Mark Shipments as Pending
+ [1001, 1002] → [{ id: 1001, status: 'Pending' }, { id: 1002, status: 'Pending' }]
+
+const item = [1001, 1002];
+const result = item.map((id)=> ({id, status: 'Pending'}))
+console.log(result);
+=========================================================================
+33. Add Delivery Region Tag
+ ['Order A', 'Order B'] → ['Order A - North Zone', 'Order B - North Zone']
+
+const item = ['Order A', 'Order B'];
+const result = item.map((e)=> `${e} - North Zone`)
+console.log(result);
+=========================================================================
+34. Expected Delivery Time Format
+ [2, 4] → ['2 days', '4 days']
+
+const item = [2,4];
+const result = item.map((e)=> `${e} days`)
+console.log(result);
+=========================================================================
+35. Create Shipment URLs
+ ['SHIP001', 'SHIP002'] → ['/track/SHIP001', '/track/SHIP002']
+
+const item = ['SHIP001', 'SHIP002'];
+const result = item.map((e)=> `/track/${e}`)
+console.log(result);
+=========================================================================
+36. Convert Integer Array to Boolean Flags
+ [0, 1, 0] → [false, true, false]
+
+const item = [0, 1, 0];
+const result = item.map(Boolean)
+console.log(result);
+=========================================================================
+37. Capitalize First Character in Each String
+ ['alpha', 'beta'] → ['Alpha', 'Beta']
+
+const item = ['alpha', 'beta'];
+const result = item.map((e)=> e.charAt().toUpperCase()+e.slice(1))
+console.log(result);
+=========================================================================
+38. Add Index to Array Values
+ ['a', 'b'] → ['0: a', '1: b']
+
+const item = ['a', 'b'];
+const result = item.map((e,index)=> index+": "+e)
+console.log(result);
+=========================================================================
+39. Attach Country Code
+ ['1234567890', '9876543210'] → ['+91-1234567890', '+91-9876543210']
+
+const item = ['1234567890', '9876543210'];
+const result = item.map((e)=> `+91-${e}`)
+console.log(result);
+=========================================================================
+40. Convert Product Titles to Slugs
+ ['Red Shirt', 'Blue Jeans'] → ['red-shirt', 'blue-jeans']
+
+const item = ['Red Shirt', 'Blue Jeans'];
+const result = item.map((e)=> e.toLowerCase().replace(" ","-"))
+console.log(result);
+=========================================================================

@@ -301,3 +301,197 @@ const students = [
 const ans = students.filter((e)=> e.course === "Python");
 console.log(ans);
 =========================================================================
+31. Filter users who have verified their email.
+const users = [
+  { id: 1, name: "Nikhil", emailVerified: true },
+  { id: 2, name: "Sana", emailVerified: false },
+  { id: 3, name: "Alok", emailVerified: true },
+  { id: 4, name: "Gauri", emailVerified: false }
+];
+const ans = users.filter((e)=> e.emailVerified);
+console.log(ans);
+=========================================================================
+32. Filter sessions that are marked as completed.
+const sessions = [
+  { id: 1, topic: "React Basics", completed: true },
+  { id: 2, topic: "Redux", completed: false },
+  { id: 3, topic: "Node.js", completed: true },
+  { id: 4, topic: "MongoDB", completed: false }
+];
+const ans = sessions.filter((e)=> e.completed);
+console.log(ans);
+=========================================================================
+33. Filter employees with contract type "Freelancer".
+const employees = [
+  { id: 1, name: "Varun", contractType: "Permanent" },
+  { id: 2, name: "Manasi", contractType: "Freelancer" },
+  { id: 3, name: "Rishabh", contractType: "Freelancer" },
+  { id: 4, name: "Neelam", contractType: "Intern" }
+];
+const ans = employees.filter((e)=> e.contractType === "Freelancer");
+console.log(ans);
+=========================================================================
+34. Filter students who have pending assignments.
+const students = [
+  { id: 1, name: "Ishita", pendingAssignments: true },
+  { id: 2, name: "Raghav", pendingAssignments: false },
+  { id: 3, name: "Nina", pendingAssignments: true },
+  { id: 4, name: "Sarthak", pendingAssignments: false }
+];
+const ans = students.filter((e)=> e.pendingAssignments);
+console.log(ans);
+
+=========================================================================
+35. Filter lectures that are scheduled on or after "2025-05-01".
+const lectures = [
+  { id: 1, topic: "React Basics", date: "2025-04-28" },
+  { id: 2, topic: "Redux", date: "2025-05-02" },
+  { id: 3, topic: "TypeScript", date: "2025-05-05" },
+  { id: 4, topic: "Node.js", date: "2025-04-30" }
+];
+const ans = lectures.filter((e)=>e.date >= "2025-06-01")
+console.log(ans)
+=========================================================================
+36. Filter tasks with dueDate before today (assume today is "2025-04-23").
+const tasks = [
+  { id: 1, title: "Submit Resume", dueDate: "2025-04-20" },
+  { id: 2, title: "Attend Seminar", dueDate: "2025-04-24" },
+  { id: 3, title: "Project Meeting", dueDate: "2025-04-21" },
+  { id: 4, title: "Course Signup", dueDate: "2025-04-23" }
+];
+const ans = tasks.filter((e)=>{
+  const currDate = new Date().toISOString().split("T")[0];
+  return e.dueDate >= currDate;
+  
+})
+console.log(ans)
+=========================================================================
+37. Filter students whose registration date is in March 2025.
+const students = [
+  { id: 1, name: "Neha", registeredOn: "2025-03-15" },
+  { id: 2, name: "Amit", registeredOn: "2025-04-01" },
+  { id: 3, name: "Tanvi", registeredOn: "2025-03-28" },
+  { id: 4, name: "Rohan", registeredOn: "2025-02-27" }
+];
+
+const res = students.filter((e)=>e.registeredOn.slice(0,7) == "2025-03")
+console.log(res)
+=========================================================================
+38. Filter subscriptions that are going to expire within the next 7 days from "2025-04-23".
+const subscriptions = [
+  { id: 1, user: "Kiran", expiresOn: "2025-04-24" },
+  { id: 2, user: "Rajat", expiresOn: "2025-04-30" },
+  { id: 3, user: "Simran", expiresOn: "2025-05-02" },
+  { id: 4, user: "Ajay", expiresOn: "2025-04-23" },
+  { id: 4, user: "Ajay", expiresOn: "2025-05-31" },
+  { id: 5, user: "Nayan", expiresOn: "2025-04-28" }
+];
+
+let deff = subscriptions.filter((e)=>{
+  let refDate = new Date("2025-04-23");
+  let newDate = new Date(e.expiresOn);
+  let deff = (newDate-refDate)/(1000*60*60*24);
+  return deff>=0&&deff<=7;
+}
+)
+console.log(deff)
+=========================================================================
+39. Filter events that are scheduled on weekends.
+const events = [
+  { id: 1, name: "Workshop", date: "2025-04-26" }, // Saturday
+  { id: 2, name: "Hackathon", date: "2025-04-27" }, // Sunday
+  { id: 3, name: "Seminar", date: "2025-04-25" }, // Friday
+  { id: 4, name: "Webinar", date: "2025-04-28" }  // Monday
+];
+const res = events.filter((e)=>{
+  let day = new Date(e.date).getDay();
+  return day === 0 || day === 6;
+})
+console.log(res)
+=========================================================================
+40. Filter employees who joined the company after 1st July 2025.
+const employees = [
+  { id: 1, name: "Isha", joinedOn: "2025-12-31" },
+  { id: 2, name: "Arjun", joinedOn: "2025-01-10" },
+  { id: 3, name: "Sneha", joinedOn: "2024-11-15" },
+  { id: 4, name: "Dev", joinedOn: "2025-02-01" }
+];
+const res = employees.filter((e)=>e.joinedOn > "2025-07-01")
+console.log(res)
+=========================================================================
+41.Find usernames containing "dev" (case-insensitive):
+const users = ["Devraj", "Ravi", "kdev007", "Deval", "Amit"];
+
+const ans = users.filter((e)=> e.toLowerCase().includes("dev"));
+console.log(ans);
+=========================================================================
+42. Find which employees have completed 1 year or more from their joining date:
+const employees = [
+  { name: "Ravi", joinedOn: "2024-06-15" },
+  { name: "Sneha", joinedOn: "2023-07-09" },
+  { name: "Ayan", joinedOn: "2025-01-01" }
+];
+const res = employees.filter((e)=>{
+  let currDate = new Date();
+  let joinDate = new Date(e.joinedOn);
+  let diff = currDate - joinDate;
+  let diffYear = diff/(1000*60*60*24)
+  return diffYear>=366;
+ 
+})
+console.log(res)
+=========================================================================
+43.Count how many appointments are scheduled in the evening (after 6PM):
+const schedule = [
+  { patient: "Ram", datetime: "2025-07-10T18:30:00" },
+  { patient: "Shyam", datetime: "2025-07-10T16:00:00" },
+  { patient: "Meena", datetime: "2025-07-10T20:00:00" }
+];
+
+const res = schedule.filter((e)=> {
+  let date = e.datetime.slice(-8,-6)
+  return date>=18;
+})
+console.log(res)
+=========================================================================
+44.Filter employees who joined within the last 30 days from "2025-07-10":
+const employees = [
+  { name: "Amit", joinedOn: "2025-07-01" },
+  { name: "Kajal", joinedOn: "2025-06-15" },
+  { name: "Raj", joinedOn: "2025-06-05" }
+]
+const res = employees.filter((e)=> {
+  let ref = new Date("2025-07-10");
+  let joinDate = new Date(e.joinedOn);
+  let diff = ref - joinDate;
+  let diffDays = diff/(1000*60*60*24)
+  return diffDays <= 30 && diffDays >= 0; 
+})
+console.log(res)
+=========================================================================
+45. Find employees whose probation is ending in the next 7 days (3-month probation):
+
+const hires = [
+  { name: "Isha", joinedOn: "2025-04-15" },
+  { name: "Tapan", joinedOn: "2025-04-05" },
+  { name: "Mira", joinedOn: "2025-03-20" }
+];
+
+=========================================================================
+46.Count employees whose tenure is more than 2 years:
+const employees = [
+  { name: "Kriti", joinedOn: "2022-05-01" },
+  { name: "Dev", joinedOn: "2024-03-12" },
+  { name: "Ayan", joinedOn: "2021-06-10" }
+];
+
+
+=========================================================================
+47.Get names of employees who are currently on notice period (notice period = 60 days)
+const employees = [
+  { name: "Neeraj", lastWorkingDay: "2025-08-20" },
+  { name: "Vivek", lastWorkingDay: "2025-07-25" },
+  { name: "Divya", lastWorkingDay: "2025-10-01" }
+];
+
+=========================================================================

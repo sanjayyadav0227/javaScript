@@ -103,3 +103,88 @@ const official = { role: "Engineer" };
 const ans = Object.assign({},personal,official);
 console.log(ans);
 =========================================================================
+11. (eCommerce)
+You are given a product:
+const product = { id: 101, name: "Tablet", price: 20000 };
+
+👉 Print all keys of the object as a single comma-separated string.
+-------------------------------------------
+const product = { id: 101, name: "Tablet", price: 20000 };
+const ans = Object.keys(product).join(",");
+console.log(ans);
+=========================================================================
+12. (Hospital)
+You are given stock:
+const stock = { paracetamol: 50, aspirin: 5, insulin: 2 };
+
+👉 Print only those stock values greater than 10.
+-----------------------------------------------
+const stock = { paracetamol: 50, aspirin: 5, insulin: 2 };
+const ans = Object.values(stock).filter(e=>e>10);
+console.log(ans);
+=========================================================================
+13. (Doctor)
+You are given doctor consultation fees:
+const fees = { drA: 500, drB: 700, drC: 300 };
+
+👉 Calculate total consultation fee.
+---------------------------------------------
+const fees = { drA: 500, drB: 700, drC: 300 };
+
+const ans = Object.values(fees).reduce((acc,curr)=>acc+curr,0);
+console.log(ans);
+=========================================================================
+16. (HR)
+You are given employee:
+const emp = { id: 301, name: "Kiran", role: "HR" };
+
+👉 Convert this object into JSON string and print.
+-----------------------------------------
+const emp = { id: 301, name: "Kiran", role: "HR" };
+
+const ans = JSON.stringify(emp);
+console.log(typeof ans)
+=========================================================================
+17. (Doctor)
+You are given patient details:
+const patient = { id: 1, name: "Amit", disease: "Flu" };
+
+👉 Deep clone this object using JSON.parse(JSON.stringify()) and print clone.
+--------------------------------------
+const patient = { id: 1, name: "Amit", disease: "Flu" };`
+const clone = JSON.parse(JSON.stringify(patient));
+console.log(clone);
+=========================================================================
+18. (eCommerce)
+You are given product prices:
+const products = { laptop: 50000, phone: 20000, watch: 5000 };
+
+👉 Create a new array where all prices are doubled.
+---------------------------------------
+const products = { laptop: 50000, phone: 20000, watch: 5000 };
+const double = Object.values(products).map(price => price * 2);
+console.log(double);
+=========================================================================
+19. (Hospital)
+You are given medicine object:
+const medicine = { name: "Paracetamol" };
+
+👉 Define a non-writable property type = "Tablet". Try to update it to "Capsule". Print the final value.
+-------------------------------------
+const medicine = { name: "Paracetamol" };
+Object.defineProperty(medicine,"type",{
+    value:"Tablet",
+    writable:false,
+    enumerable: true,
+    configurable: true
+})
+medicine.type = "Capsule";
+console.log(medicine.type)
+=========================================================================
+20. (HR)
+You are given employee salary object:
+const emp = { basic: 30000, bonus: 5000 };
+
+👉 Add a getter property totalSalary that returns sum of basic + bonus. Print emp.totalSalary.
+----------------------------------
+=========================================================================

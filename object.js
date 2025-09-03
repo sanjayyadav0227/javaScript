@@ -188,3 +188,191 @@ const emp = { basic: 30000, bonus: 5000 };
 👉 Add a getter property totalSalary that returns sum of basic + bonus. Print emp.totalSalary.
 ----------------------------------
 =========================================================================
+21. (HR – Group Employees by Department)
+const employees = [
+  { id: 1, name: "Amit", dept: "IT" },
+  { id: 2, name: "Neha", dept: "HR" },
+  { id: 3, name: "Ravi", dept: "IT" },
+];
+
+👉 Group employees by department into an object like:
+{ IT: ["Amit", "Ravi"], HR: ["Neha"] }
+-------------------------------------------------
+const employees = [
+  { id: 1, name: "Amit", dept: "IT" },
+  { id: 2, name: "Neha", dept: "HR" },
+  { id: 3, name: "Ravi", dept: "IT" },
+];
+const ans = employees.reduce((acc,curr)=>{
+    acc[curr.dept]=(acc[curr.dept]||[]).concat(curr);
+    return acc;
+},{})
+console.log(ans);
+=========================================================================
+22. (eCommerce – Group Products by Category)
+const products = [
+  { id: 1, name: "Shirt", category: "Clothing" },
+  { id: 2, name: "Jeans", category: "Clothing" },
+  { id: 3, name: "Laptop", category: "Electronics" },
+];
+
+👉 Create an object grouping products by category.
+-----------------------------------------------
+const products = [
+  { id: 1, name: "Shirt", category: "Clothing" },
+  { id: 2, name: "Jeans", category: "Clothing" },
+  { id: 3, name: "Laptop", category: "Electronics" },
+];
+
+const ans = products.reduce((acc,curr)=>{
+    acc[curr.category]=(acc[curr.category]||[]).concat(curr)
+    return acc;
+},{})
+console.log(ans);
+=========================================================================
+23. (Doctor – Count Patients by Disease)
+const patients = [
+  { id: 1, name: "Amit", disease: "Flu" },
+  { id: 2, name: "Riya", disease: "Diabetes" },
+  { id: 3, name: "Sam", disease: "Flu" },
+];
+
+👉 Output should be:
+{ Flu: 2, Diabetes: 1 }
+--------------------------------------------
+const patients = [
+  { id: 1, name: "Amit", disease: "Flu" },
+  { id: 2, name: "Riya", disease: "Diabetes" },
+  { id: 3, name: "Sam", disease: "Flu" },
+];
+
+const ans = patients.reduce((acc,curr)=>{
+    acc[curr.disease]=(acc[curr.disease]||0)+1;
+    return acc;
+},{})
+console.log(ans);
+=========================================================================
+24. (Hospital – Highest Stock Medicine)
+const stock = { paracetamol: 50, aspirin: 30, insulin: 10 };
+
+👉 Find the medicine with the highest stock.
+--------------------------------------------
+const stock = { paracetamol: 50, aspirin: 30, insulin: 10 };
+const ans = Object.entries(stock).reduce((acc,curr)=>acc[1]>curr[1]?acc:curr)
+console.log(ans);
+=========================================================================
+25. (HR – Convert Array to Object by ID)
+const employees = [
+  { id: 1, name: "Amit" },
+  { id: 2, name: "Neha" }
+];
+
+👉 Convert into object:
+{ 1: { id:1, name:"Amit" }, 2: { id:2, name:"Neha" } }
+----------------------------------------------
+const employees = [
+  { id: 1, name: "Amit" },
+  { id: 2, name: "Neha" }
+];
+const ans = employees.reduce((acc,curr)=>{
+    acc[curr.id]=curr;
+    return acc;
+},{})
+console.log(ans);
+=========================================================================
+26. (eCommerce – Calculate Cart Total)
+const cart = [
+  { name: "Shirt", price: 1000, qty: 2 },
+  { name: "Shoes", price: 2000, qty: 1 },
+];
+
+👉 Find total cart value.
+-------------------------------------------
+const cart = [
+  { name: "Shirt", price: 1000, qty: 2 },
+  { name: "Shoes", price: 2000, qty: 1 },
+];
+
+const ans = cart.reduce((acc,curr)=>acc+curr.qty,0)
+console.log(ans);
+=========================================================================
+27. (Doctor – Group Doctors by Specialization)
+const doctors = [
+  { id: 1, name: "Dr. A", specialization: "Cardiology" },
+  { id: 2, name: "Dr. B", specialization: "Neurology" },
+  { id: 3, name: "Dr. C", specialization: "Cardiology" },
+];
+
+👉 Group them like:
+{ Cardiology: ["Dr. A", "Dr. C"], Neurology: ["Dr. B"] }
+--------------------------------------------------------
+ const doctors = [
+   { id: 1, name: "Dr. A", specialization: "Cardiology" },
+   { id: 2, name: "Dr. B", specialization: "Neurology" },
+   { id: 3, name: "Dr. C", specialization: "Cardiology" },
+ ];
+ const ans = doctors.reduce((acc,curr)=>{
+   acc[curr.specialization]=(acc[curr.specialization]||[]).concat(curr.name);
+   return acc;
+ },{})
+ console.log(ans)
+=========================================================================
+28. (Hospital – Medicine Filter by Min Stock)
+const stock = [
+  { name: "Paracetamol", qty: 50 },
+  { name: "Insulin", qty: 5 },
+  { name: "Aspirin", qty: 20 },
+];
+
+👉 Return only medicines with stock >= 20.
+------------------------------------------
+ const stock = [
+   { name: "Paracetamol", qty: 50 },
+   { name: "Insulin", qty: 5 },
+   { name: "Aspirin", qty: 20 },
+ ];
+
+ const ans = stock.filter((obj)=>obj.qty>=20).map((e)=>e.name)
+ console.log(ans);
+=========================================================================
+29. (eCommerce – Most Expensive Product)
+const products = [
+  { id: 1, name: "Shirt", price: 1200 },
+  { id: 2, name: "Laptop", price: 50000 },
+  { id: 3, name: "Shoes", price: 2500 }
+];
+
+👉 Find the product with the highest price.
+----------------------------------------------
+ const products = [
+   { id: 1, name: "Shirt", price: 1200 },
+   { id: 2, name: "Laptop", price: 50000 },
+   { id: 3, name: "Shoes", price: 2500 }
+ ];
+
+ const ans = products.reduce((acc,curr)=>curr.price>acc.price?curr:acc)["name"]
+ console.log(ans)
+=========================================================================
+30. (HR – Salary Grouping by Range)
+const employees = [
+  { name: "Amit", salary: 25000 },
+  { name: "Neha", salary: 60000 },
+  { name: "Ravi", salary: 45000 },
+];
+
+👉 Group into { low: [], mid: [], high: [] }
+ (Condition: salary <30k → low, 30k–50k → mid, >50k → high).
+----------------------------------------------
+const employees = [
+  { name: "Amit", salary: 25000 },
+  { name: "Neha", salary: 60000 },
+  { name: "Ravi", salary: 35000 },
+];
+const ans = employees.reduce((acc,curr)=>{
+  const key = curr.salary<30000 ? "low" : curr.salary<=50000 ? "mid" : "high";
+  acc[key].push(curr);
+ return acc;
+  
+},{low:[],mid:[],high:[]})
+console.log(ans);
+=========================================================================
